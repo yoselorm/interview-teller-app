@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { addDoc, arrayUnion, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { v4 as uuidv4 } from 'uuid';
-import lormy from '../assests/lormy.JPG'
+import lormy from '../assests/lormy.JPG';
+import { FaUser } from 'react-icons/fa'
 const Boardform = () => {
     const [transactionType, setTransactionType] = useState('deposit')
     const navigate = useNavigate()
@@ -94,7 +95,7 @@ const Boardform = () => {
                 <div className='mt-5 space-y-4 flex flex-col justify-center'>
                     <p className='flex justify-center text-gray-400'>Teller Machine</p>
                     <div className='flex flex-col justify-center items-center'>
-                        <img src={lormy} className='h-20 w-20 rounded-full object-fit ' />
+                        <FaUser className="text-gray-500 border-[1px] rounded-full p-3" size={90} />
                         <p className='font-bold text-gray-400 flex justify-center'>{user.email}</p>
                         <p className='font-bold text-gray-400 flex justify-center'>Balance</p>
                         <h2 className='font-semibold text-3xl flex justify-center'>${balance.toLocaleString()}</h2>
